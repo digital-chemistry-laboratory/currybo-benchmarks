@@ -1,0 +1,52 @@
+[project]
+name = "currybo_benchmarks"
+version = "0.1"
+requires-python = ">=3.9"
+
+dependencies = [
+    "torch >= 2.2.1",
+    "botorch >= 0.10.0",
+    "gpytorch >= 1.11",
+    "matplotlib >= 3.8.3",
+    "imageio >= 2.34.0",
+    "pandas >= 2.2.1",
+    "rdkit >= 2023.9.5",
+    "gauche >= 0.1.6",
+    "pypalettes",
+    "pub_ready_plots",
+]
+
+license = "MIT"
+license-files = ["LICENSE*"]
+readme = "README.md"
+description = "Benchmarking CurryBO for chemical reaction optimization"
+
+[project.optional-dependencies]
+dev = [
+    "black>=21.12b0",
+    "flake8>=6.1.0",
+    "isort>=5.12.0",
+]
+
+[project.scripts]
+currybo-benchmarks = "currybo_benchmarks.cli:cli"
+
+[build-system]
+requires = ["setuptools>=77.0.3"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.package-data]
+currybo_benchmarks = ["datasets/chemistry_datasets/*.csv"]
+
+[tool.setuptools]
+packages = { find = { where = ["src"] } }
+
+[tool.coverage.report]
+show_missing = true
+
+[tool.coverage.xml]
+output = "coverage.xml"
+
+[tool.flake8]
+max-line-length = 160
+ignore = "D100, D104, D107"
