@@ -1,19 +1,27 @@
 [project]
 name = "currybo_benchmarks"
-version = "0.1"
+version = "0.1.1"
 requires-python = ">=3.9"
 
 dependencies = [
+    "currybo >= 0.1.1, < 0.2",
     "torch >= 2.2.1",
     "botorch >= 0.10.0",
     "gpytorch >= 1.11",
     "matplotlib >= 3.8.3",
     "imageio >= 2.34.0",
     "pandas >= 2.2.1",
+    "numpy",
+    "scipy",
+    "scikit-learn",
+    "threadpoolctl",
+    "platformdirs",
     "rdkit >= 2023.9.5",
     "gauche >= 0.1.6",
     "pypalettes",
     "pub_ready_plots",
+    "botier",
+    "atpbar",
 ]
 
 license = "MIT"
